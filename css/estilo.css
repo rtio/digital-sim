@@ -130,13 +130,64 @@ main{
 }
 
 section{
-    padding: 60px 100px;
+    padding: 60px;
 }
 section h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+section table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 26px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+section table thead{
+    background-color: var(--dark-grey);
+    color: var(--light);
+}
+section table thead td{
+    padding: 0 16px;
+    line-height: 46px;
+}
+section table tbody td{
+    padding: 0 16px;
+    font-size: 14px;
+}
+section table tbody tr:nth-child(even){
+    background-color: #00000020;
+}
+section table thead td:nth-child(2),
+section table tbody td:nth-child(2){
+    width: 200px;
+    text-align: center;
+}
+section table thead td:last-child,
+section table tbody td:last-child{
+    width: 100px;
+    text-align: center;
+}
+section table tbody .acoes{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 6px 0;
+}
+section table tbody .acoes box-icon{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background-color: var(--grey);
+    cursor: pointer;
+    border-radius: 20px;
+}
+section table tbody .acoes box-icon:hover{
+    background-color: var(--pink);
+    fill: var(--light);
+}
+
 
 
 #overlay{
@@ -178,6 +229,18 @@ section h2{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 26px;
+}
+#drawer form h4 box-icon{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: var(--grey);
+    cursor: pointer;
+}
+#drawer form h4 box-icon:hover{
+    background-color: var(--pink);
+    fill: var(--light);
 }
 #drawer form label{
     display: block;
