@@ -35,10 +35,39 @@
     </header>
     
     <main>
+        <section id="especialidades">
+            <h2>
+                Especialidades 
+                <button id="novaEspecialidade" class="btn mini-title suave">
+                    <span class="suave">Nova Especialidade</span>
+                </button>
+            </h2>
 
+            <table>
+                <thead>
+                    <td class="mini-title">Especialidade</td>
+                    <td class="mini-title">Ações</td>
+                </thead>
+                <tbody id="tabelaEspecialidades"></tbody>
+            </table>
+            
+        </section>
     </main>
+
+    <section id="overlay" class="suave"></section>
+    <div id="drawer" class="suave">
+        <form id="formCriar">
+            <h4>Criar <box-icon id="fecharCriar" class="suave" name='x'></box-icon></h4>
+            <label for="especialidadeNome" class="mini-title">Nome</label>
+            <input type="text" class="suave" id="especialidadeNome" placeholder="Digite o nome da especialidade" required>
+            <button type="submit" class="btn full mini-title suave">
+                <span class="suave">Salvar</span>
+            </button>
+        </form>
+    </div>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/especialidades.js"></script>
 </body>
 </html>

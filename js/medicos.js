@@ -16,6 +16,11 @@ let medicos = [
     },
 ];
 
+novoMedico.onclick = () => {
+    overlay.classList.add('active');
+    drawer.classList.add('active');
+}
+
 function listarMedicos(){
     tabelaMedicos.innerHTML = '';
     for(let i = 0; i < medicos.length; i++){
