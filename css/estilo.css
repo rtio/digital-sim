@@ -169,6 +169,7 @@ section table tbody td:last-child{
     width: 100px;
     text-align: center;
 }
+
 section table tbody .acoes{
     display: flex;
     justify-content: center;
