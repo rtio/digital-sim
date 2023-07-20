@@ -31,7 +31,7 @@ function listarHorarios(){
     if(horarios.length === 0){
         tabelaHorarios.innerHTML = `
             <tr>
-                <td colspan="2" style="line-height: 40px;">Nenhum horario cadastrado</td>
+                <td colspan="6" style="line-height: 40px;">Nenhum horario cadastrado</td>
             </tr>
         `;
     }else{

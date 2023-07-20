@@ -170,6 +170,13 @@ section table tbody td:last-child{
     text-align: center;
 }
 
+/* HACK */
+table.hack thead td:nth-child(2),
+table.hack tbody td:nth-child(2) {
+    text-align: inherit;
+    width: inherit;
+}
+
 section table tbody .acoes{
     display: flex;
     justify-content: center;
