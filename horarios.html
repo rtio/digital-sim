@@ -35,10 +35,57 @@
     </header>
     
     <main>
+        <section id="horarios">
+            <h2>
+                Horários 
+                <button id="novoHorario" class="btn mini-title suave">
+                    <span class="suave">Novo horário</span>
+                </button>
+            </h2>
 
+            <table class="hack">
+                <thead>
+                    <td class="mini-title">Seg</td>
+                    <td class="mini-title">Ter</td>
+                    <td class="mini-title">Qua</td>
+                    <td class="mini-title">Qui</td>
+                    <td class="mini-title">Sex</td>
+                </thead>
+                <tbody id="tabelaHorarios"></tbody>
+            </table>
+            
+        </section>
     </main>
+
+    <section id="overlay" class="suave"></section>
+    <div id="drawer" class="suave">
+        <form id="formCriar">
+            <h4>Criar <box-icon id="fecharCriar" class="suave" name='x'></box-icon></h4>
+            <label for="medico" class="mini-title">Médico</label>
+            <select id="medico" required></select>
+            <label for="diaSemana" class="mini-title">Dia</label>
+            <select class="suave" id="diaSemana" required>
+                <option value="1">Segunda</option>
+                <option value="2">Terça</option>
+                <option value="3">Quarta</option>
+                <option value="4">Quinta</option>
+                <option value="5">Sexta</option>
+            </select>
+            <label for="horarioOpt" class="mini-title">Horario</label>
+            <select class="suave" id="horarioOpt" required>
+                <option value="1">10:00</option>
+                <option value="2">11:00</option>
+                <option value="3">15:00</option>
+                <option value="4">16:00</option>
+            </select>
+            <button type="submit" class="btn full mini-title suave">
+                <span class="suave">Salvar</span>
+            </button>
+        </form>
+    </div>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/horarios.js"></script>
 </body>
 </html>

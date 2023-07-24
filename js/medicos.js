@@ -1,4 +1,4 @@
-let medicos = [
+let medicosInicial = [
     {
         id: 1,
         nome: 'Dr. Paulo Roberto',
@@ -41,13 +41,15 @@ function listarEspecialidades(){
 
 listarEspecialidades();
 
+let horarios =  JSON.parse(localStorage.getItem('medicos')) || medicosInicial;
+
 function listarMedicos(){
     tabelaMedicos.innerHTML = '';
-    for(let i = 0; i < medicos.length; i++){
+    for(let i = 0; i < horarios.length; i++){
         tabelaMedicos.innerHTML += `
             <tr>
-                <td>${medicos[i].nome}</td>
-                <td>${medicos[i].especialidade}</td>
+                <td>${horarios[i].nome}</td>
+                <td>${horarios[i].especialidade}</td>
                 <td>
                     <div class="acoes">
                         <box-icon class="suave" name='pencil'></box-icon>
@@ -62,14 +64,15 @@ function listarMedicos(){
 listarMedicos();
 
 function adicionarMedico(){
-    formCriar.onsubmit = function(){
-        event.preventDefault();
+    formCriar.onsubmit = function(e){
+        e.preventDefault();
         let medico = {
-            id: (medicos.length + 1),
+            id: (horarios.length + 1),
             nome: medicoNome.value,
-            especialidade: medicoEspecialidade.value 
+            especialidade: medicoEspecialidade.options[medicoEspecialidade.selectedIndex].text 
         }
-        medicos.push(medico);
+        horarios.push(medico);
+        localStorage.setItem('medicos', JSON.stringify(horarios));
         listarMedicos();
     }
 }
