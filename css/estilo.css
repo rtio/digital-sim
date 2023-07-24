@@ -171,10 +171,19 @@ section table tbody td:last-child{
 }
 
 /* HACK */
+table.hack thead td:last-child,
+table.hack tbody td:last-child{
+    text-align: inherit;
+    width: inherit;
+}
 table.hack thead td:nth-child(2),
 table.hack tbody td:nth-child(2) {
     text-align: inherit;
     width: inherit;
+}
+table.hack thead td,
+table.hack tbody td{
+    max-width: 60px;
 }
 
 section table tbody .acoes{
@@ -191,6 +200,15 @@ section table tbody .acoes box-icon{
     cursor: pointer;
     border-radius: 20px;
 }
+.acoes.tiny box-icon{
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    background-color: var(--grey);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 section table tbody .acoes box-icon:hover{
     background-color: var(--pink);
     fill: var(--light);
