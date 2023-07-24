@@ -25,17 +25,16 @@ listarMedicos();
 
 let horarios = JSON.parse(localStorage.getItem('horarios')) || [];
 
-function listarHorarios(){
-    //return JSON.parse(localStorage.getItem('horarios')) || [];
+function listarHorarios() {
     tabelaHorarios.innerHTML = '';
-    if(horarios.length === 0){
+    if (horarios.length === 0) {
         tabelaHorarios.innerHTML = `
             <tr>
-                <td colspan="6" style="line-height: 40px;">Nenhum horario cadastrado</td>
+                <td colspan="5" style="line-height: 40px;">Nenhum horario cadastrado</td>
             </tr>
         `;
-    }else{
-        for(let i = 0; i < horarios.length; i++){
+    } else {
+        for (let i = 0; i < horarios.length; i++) {
             tabelaHorarios.innerHTML += `
                 <tr>
                     <td>${horarios[i].medico}</td>
@@ -44,28 +43,40 @@ function listarHorarios(){
                     <td>
                         <div class="acoes">
                             <box-icon class="suave" name='pencil'></box-icon>
-                            <box-icon class="suave" name='trash' onClick="deletarEspecialidade(${especialidades[i].id})"></box-icon>
+                            <box-icon class="suave" name='trash' onClick="deletarHorario(${horarios[i].id})"></box-icon>
                         </div>
                     </td>
                 </tr>
-            `;
+                `;
         }
     }
 }
 
 listarHorarios();
 
-function adicionarHorario(){
-    formCriar.onsubmit = function(e){
+function adicionarHorario() {
+    formCriar.onsubmit = function (e) {
         e.preventDefault();
         let horario = {
             id: (horarios.length + 1),
             medico: medico.options[medico.selectedIndex].text,
             diaSemana: diaSemana.value,
-            horario: horario.value
+            horario: horarioOpt.value
         }
         horarios.push(horario);
         localStorage.setItem('horarios', JSON.stringify(horarios));
         listarHorarios();
+    }
+}
+
+adicionarHorario();
+
+function deletarHorario(id) {
+    for (let i = 0; i < horarios.length; i++) {
+        if (horarios[i].id == id) {
+            horarios.splice(i, 1);
+            localStorage.setItem('horarios', JSON.stringify(horarios));
+            listarHorarios();
+        }
     }
 }

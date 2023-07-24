@@ -200,14 +200,6 @@ section table tbody .acoes box-icon{
     cursor: pointer;
     border-radius: 20px;
 }
-.acoes.tiny box-icon{
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-    background-color: var(--grey);
-    cursor: pointer;
-    border-radius: 10px;
-}
 
 section table tbody .acoes box-icon:hover{
     background-color: var(--pink);
