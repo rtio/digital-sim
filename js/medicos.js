@@ -1,3 +1,7 @@
+import { registrarEventosGlobais } from './scripts.js';
+
+registrarEventosGlobais();
+
 let medicosInicial = [
     {
         id: 1,
